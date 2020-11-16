@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1 {
+  color: white;
+}
+
+h2 {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.card-info {
+  height: 200px;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 15px;
+}
