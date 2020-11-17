@@ -7,6 +7,24 @@
   <div class="cards-listings row">
   <%# MAKE WHOLE CARDS CLICKABLE (links) DEPENDING ON ACTION %>
 
+<<<<<<< HEAD
+<div class="container">
+
+  <% @listings.each do |listing| %>
+  <div class="card text-justify" style="width: 15em; margin:0 auto;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" class="img-fluid" alt="Responsive image" alt="Card image cap">
+    <%= link_to listing.name, listing_path(listing) %>
+  </div>
+  <% end %>
+
+<div class="d-flex justify-content-between" style="width: 15em; margin:0 auto;">
+  <ul>
+      <li class="list-inline-item btn btn-outline-primary btn-sm"><%= link_to "New Listing", new_listing_path %></li>
+  </ul>
+</div>
+</div>
+
+=======
     <div class="card-listing col-12 col-lg-4">
       <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
       <div class="card-listing-description">
@@ -76,3 +94,4 @@
   </ul>
 
   <p><%= link_to "Create a Listing", new_listing_path %></p>
+>>>>>>> 3daca0a8493a92876a05596a60233fcb4cefe9d6
