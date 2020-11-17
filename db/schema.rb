@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_104208) do
     t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
@@ -42,5 +43,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_104208) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
   add_foreign_key "listings", "users"
+
 end
