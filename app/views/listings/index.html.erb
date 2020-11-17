@@ -7,7 +7,6 @@
   <div class="cards-listings row">
   <%# MAKE WHOLE CARDS CLICKABLE (links) DEPENDING ON ACTION %>
 
-<<<<<<< HEAD
 <div class="container">
 
   <% @listings.each do |listing| %>
@@ -24,7 +23,6 @@
 </div>
 </div>
 
-=======
     <div class="card-listing col-12 col-lg-4">
       <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
       <div class="card-listing-description">
@@ -86,6 +84,7 @@
     </div>
 
   </div>
+  <p><%= link_to "Create a Listing", new_listing_path, class: "btn btn-primary"%></p>
 </div>
   <ul>
   <% @listings.each do |listing| %>
@@ -94,4 +93,4 @@
   </ul>
 
   <p><%= link_to "Create a Listing", new_listing_path %></p>
->>>>>>> 3daca0a8493a92876a05596a60233fcb4cefe9d6
+
