@@ -8,6 +8,7 @@
   <%# MAKE WHOLE CARDS CLICKABLE (links) DEPENDING ON ACTION %>
 
     <div class="card-listing col-12 col-lg-4">
+    <a href="http://www.example.com"></a>
       <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
       <div class="card-listing-description">
         <div class="card-title">
@@ -28,6 +29,7 @@
     </div>
     
     <div class="card-listing col-12 col-lg-4">
+    <a href="http://www.example.com"></a>
       <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
       <div class="card-listing-description">
         <div class="card-title">
@@ -48,7 +50,8 @@
     </div>
 
     <div class="card-listing col-12 col-lg-4">
-      <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
+      <a href="http://www.example.com"></a>
+      <%= image_tag "tennis.jpg", class: "card-listing-img" %>
       <div class="card-listing-description">
         <div class="card-title">
           <h3>Ad name for equipment </h3>
@@ -69,6 +72,7 @@
 
   </div>
 </div>
+
   <ul>
   <% @listings.each do |listing| %>
   <li><%= link_to listing.name, listing_path(listing) %></li>
