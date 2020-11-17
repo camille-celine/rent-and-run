@@ -1,11 +1,78 @@
-<h2>All listings</h2>
+<div class="container">
+  <h1 class="my-3">Sports equipment for rent</h1>
+</div>
 
+<div class="container">
+  <h2>Tennis</h2>
+  <div class="cards-listings row">
+  <%# MAKE WHOLE CARDS CLICKABLE (links) DEPENDING ON ACTION %>
 
-<ul>
-<% @listings.each do |listing| %>
-<li><%= link_to listing.name, listing_path(listing) %></li>
-<% end %>
-</ul>
+    <div class="card-listing col-12 col-lg-4">
+      <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
+      <div class="card-listing-description">
+        <div class="card-title">
+          <h3>Ad name for equipment</h3>
+          <p>Tennis</p>
+        </div>
+        <div class="card-details">
+            <div>
+              <p>Available?</p>
+              <p>Location</p>
+            </div>
+            <div class="card-price">
+              <p>Username</p>
+              <p>$$$</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-listing col-12 col-lg-4">
+      <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
+      <div class="card-listing-description">
+        <div class="card-title">
+          <h3>Ad name for equipment too long for 1 line</h3>
+          <p>Tennis</p>
+        </div>
+        <div class="card-details">
+            <div>
+              <p>Available?</p>
+              <p>Location</p>
+            </div>
+            <div class="card-price">
+              <p>Username</p>
+              <p>$$$</p>
+            </div>
+        </div>
+      </div>
+    </div>
 
-<p><%= link_to "Create a Listing", new_listing_path %></p>
+    <div class="card-listing col-12 col-lg-4">
+      <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
+      <div class="card-listing-description">
+        <div class="card-title">
+          <h3>Ad name for equipment </h3>
+          <p>Tennis</p>
+        </div>
+        <div class="card-details">
+            <div>
+              <p>Available?</p>
+              <p>Location</p>
+            </div>
+            <div class="card-price">
+              <p>Username</p>
+              <p>$$$</p>
+            </div>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</div>
+  <ul>
+  <% @listings.each do |listing| %>
+  <li><%= link_to listing.name, listing_path(listing) %></li>
+  <% end %>
+  </ul>
+
+  <p><%= link_to "Create a Listing", new_listing_path %></p>
