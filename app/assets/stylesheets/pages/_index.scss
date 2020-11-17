@@ -9,7 +9,7 @@
 }
 
 .card-listing {
-  height: 350px;
+  height: 400px;
   max-width: 300px;
   background-color: white;
   border-radius: 5px;
@@ -18,15 +18,40 @@
   padding: 0;
 }
 
+.card-title {
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 0.5rem;
+}
+
+.card-title h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
 .card-listing-img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
 }
 
 .card-listing-description {
-  display: flex;
   margin: 20px 20px;
+  text-align: left;
+}
+
+.card-details {
+  display: flex;
   justify-content: space-between;
   position: relative;
 }
+
+.card-details p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-price {
+  position: absolute;
+  right: 0;
+}
+
