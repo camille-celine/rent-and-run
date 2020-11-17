@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
+
     redirect_to listings_path
   end
 
@@ -37,7 +38,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
 
     if @listing.update(listing_params)
-      redirect_to @listing
+      redirect_to listings_path(@listing)
     else
       render :edit
     end
