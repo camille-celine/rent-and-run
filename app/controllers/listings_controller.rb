@@ -13,7 +13,6 @@ class ListingsController < ApplicationController
   end
 
   def create
-    # raise
     @listing = Listing.new(listing_params)
     @listing.user = current_user
     if @listing.save

@@ -10,7 +10,24 @@
     <%= f.button :submit %>
   <% end %>
 
+<<<<<<< HEAD
   <ul class="list-inline">
       <li class="list-inline-item btn btn-outline-primary btn-sm"><%= link_to "Listings", listings_path %></li>
   </ul>
 </div>
+=======
+<%= simple_form_for @listing do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :availability %>
+  <%= f.input :image, as: :file, label: "Image of item:" %>
+  <%= f.button :submit %>
+<% end %>
+
+<p><%= link_to "See all Listings", listings_path %></p>
+
+
+<!-- show -->
+>>>>>>> 3daca0a8493a92876a05596a60233fcb4cefe9d6
