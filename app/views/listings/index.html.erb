@@ -68,6 +68,7 @@
     </div>
 
   </div>
+  <p><%= link_to "Create a Listing", new_listing_path, class: "btn btn-primary"%></p>
 </div>
   <ul>
   <% @listings.each do |listing| %>
@@ -75,4 +76,3 @@
   <% end %>
   </ul>
 
-  <p><%= link_to "Create a Listing", new_listing_path %></p>
