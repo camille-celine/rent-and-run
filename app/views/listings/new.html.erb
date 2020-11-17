@@ -1,18 +1,16 @@
+<h2>Create a Listing</h2>
 <div class="container">
-  <h2>Create a Listing</h2>
-
-
   <%= simple_form_for @listing do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :location %>
     <%= f.input :availability %>
-    <%= f.input :image, as: :file, label: "Image of item:" %>                                  
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.input :image, as: :file, label: "Image of your item:" %>
+    <%= f.button :submit %>
   <% end %>
-<div>
-  <p><%= link_to "See all Listings", listings_path %></p>
 
-
-<!-- show -->
+  <ul class="list-inline">
+      <li class="list-inline-item btn btn-outline-primary btn-sm"><%= link_to "Listings", listings_path %></li>
+  </ul>
+</div>
