@@ -1,9 +1,11 @@
-<h2> <%= @listing.name %> </h2>
+<div class= "container">
+  <h2> <%= @listing.name %> </h2>
 
-<p>Description: <%= @listing.description %></p>
-<p>Price: <%= @listing.price %>$</p>
-<p>Availability: <%= @listing.availability %></p>
-<p>Location: <%= @listing.location %></p>
+  <p>Description: <%= @listing.description %></p>
+  <p>Price: <%= @listing.price %>$</p>
+  <p>Availability: <%= @listing.availability %></p>
+  <p>Location: <%= @listing.location %></p>
 
-<p><%= link_to "See all Listings", listings_path %></p>
-<p><%= link_to "Create a Listing", new_listing_path %></p>
+  <p><%= link_to "See all Listings", listings_path %></p>
+  <p><%= link_to "Create a Listing", new_listing_path %></p>
+</div>
