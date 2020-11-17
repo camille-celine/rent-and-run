@@ -1,0 +1,17 @@
+<h2>Edit <%= @listing.name %> </h2>
+<p>Description: <%= @listing.description %></p>
+<p>Price: <%= @listing.price %>$</p>
+<p>Availability: <%= @listing.availability %></p>
+<p>Location: <%= @listing.location %></p>
+
+
+<%= simple_form_for @listing do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :availability %>
+  <%= f.button :submit %>
+<% end %>
+
+<p><%= link_to "See all Listings", listings_path %></p>

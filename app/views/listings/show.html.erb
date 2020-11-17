@@ -5,5 +5,9 @@
 <p>Availability: <%= @listing.availability %></p>
 <p>Location: <%= @listing.location %></p>
 
+
+<p><%= link_to "Delete", article_path(@article), method: :delete %></p>
+<p><%= link_to "Edit", edit_listing_path %></p>
+
 <p><%= link_to "See all Listings", listings_path %></p>
 <p><%= link_to "Create a Listing", new_listing_path %></p>
