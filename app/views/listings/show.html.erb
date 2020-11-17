@@ -1,13 +1,16 @@
-<h2> <%= @listing.name %> </h2>
+<div class= "container">
+  
+  <h2> <%= @listing.name %> </h2>
 <!-- test -->
-<p><strong>Description:</strong> <%= @listing.description %></p>
-<p><strong>Price::</strong> <%= @listing.price %>$</p>
-<p><strong>Location::</strong> <%= @listing.location %></p>
-<p><strong>Availability::</strong> <%= @listing.availability %></p>
+  <p><strong>Description:</strong> <%= @listing.description %></p>
+  <p><strong>Price::</strong> <%= @listing.price %>$</p>
+  <p><strong>Location::</strong> <%= @listing.location %></p>
+  <p><strong>Availability::</strong> <%= @listing.availability %></p>
 
+  <p><%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <p><%= link_to "Edit", edit_listing_path %></p>
 
-<p><%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: "Are you sure?"} %></p>
-<p><%= link_to "Edit", edit_listing_path %></p>
-
-<p><%= link_to "See all Listings", listings_path %></p>
-<p><%= link_to "Create a Listing", new_listing_path %></p>
+  <p><%= link_to "See all Listings", listings_path %></p>
+  <p><%= link_to "Create a Listing", new_listing_path %></p>
+  
+</div>
