@@ -1,2 +1,57 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.cards-listings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.card-listing {
+  height: 400px;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 0;
+}
+
+.card-title {
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 0.5rem;
+}
+
+.card-title h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.card-listing-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-listing-description {
+  margin: 20px 20px;
+  text-align: left;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-details p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-price {
+  position: absolute;
+  right: 0;
+}
+
