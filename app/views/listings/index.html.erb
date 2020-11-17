@@ -1,7 +1,35 @@
 <div class="container">
-  <h1>Sports equipment for rent</h1>
+  <h1 class="my-3">Sports equipment for rent</h1>
+</div>
 
+<div class="container">
+  <h2>Table tennis</h2>
+  <div class="cards-listings row">
+  <%# MAKE WHOLE CARDS CLICKABLE (links) DEPENDING ON ACTION %>
 
+    <div class="card-listing col-12 col-lg-4">
+      <%= image_tag "banner.jpg", alt: "Find", class: "card-listing-img" %>
+      <div class="card-listing-description">
+        <div>
+          <h3 class="my-3">Ad name for equipment</h3>
+          <p>Table tennis</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-listing col-12 col-lg-4">
+      <%= image_tag "football.png", alt: "Find", width: 60 %>
+      <h3 class="my-3">Lend</h3>
+      <p>Lend the equipment you currently don't need</p>
+    </div>
+
+    <div class="card-listing col-12 col-lg-4">
+      <%= image_tag "confetti.png", alt: "Find", width: 60 %>
+      <h3 class="my-3">Enjoy</h3>
+      <p>Try out new equipment or make money out of the ones that's been laying around!</p>
+    </div>
+  </div>
+</div>
   <ul>
   <% @listings.each do |listing| %>
   <li><%= link_to listing.name, listing_path(listing) %></li>
@@ -9,5 +37,3 @@
   </ul>
 
   <p><%= link_to "Create a Listing", new_listing_path %></p>
-
-</div>
