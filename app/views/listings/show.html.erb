@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
 
   <div class="card" style="width: 30em; margin:0 auto;">
     <img class="card-img-top" src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" class="img-fluid" alt="Responsive image" alt="Card image cap">
@@ -17,5 +18,18 @@
       <li class="list-inline-item btn btn-outline-primary btn-md"><%= link_to "New Listing", new_listing_path %></li>
       <li class="list-inline-item btn btn-outline-primary btn-md"><%= link_to "Book", new_listing_booking_path(@listing) %></li>
     </ul>
+=======
+  <div class="card-show" style="width:50em; margin:0 auto;">
+    <%= image_tag "tennis.jpg", alt: "Find", class: "card-show-img" %>
+    <div class="card-show-details">
+      <h2> <%= @listing.name %> </h2>
+      <p><strong>Description:</strong> <%= @listing.description %></p>
+      <p><strong>Price::</strong> <%= @listing.price %>$</p>
+      <p><strong>Location:</strong> <%= @listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+      <p><strong>Availability:</strong> <%= @listing.availability %> ✔️</p>
+      <%= link_to "Book this equipement", new_booking_path, class: "btn btn-flat" %>
+    </div>
+    <%= link_to "Back to listing", listings_path, class: "button-show list-inline-item btn btn-outline-primary btn-md" %>
+>>>>>>> 9c270ec2050e74b3034c172513e1d0cbe3b7719b
   </div>
 </div>
