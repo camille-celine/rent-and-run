@@ -1,13 +1,20 @@
-<h2> <%= @listing.name %> </h2>
-<!-- test -->
-<p><strong>Description:</strong> <%= @listing.description %></p>
-<p><strong>Price::</strong> <%= @listing.price %>$</p>
-<p><strong>Location::</strong> <%= @listing.location %></p>
-<p><strong>Availability::</strong> <%= @listing.availability %></p>
+<div class="container">
 
+  <div class="card" style="width: 30em; margin:0 auto;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" class="img-fluid" alt="Responsive image" alt="Card image cap">
+    <h2> <%= @listing.name %> </h2>
+    <p><strong>Description:</strong> <%= @listing.description %></p>
+    <p><strong>Price::</strong> <%= @listing.price %>$</p>
+    <p><strong>Location:</strong> <%= @listing.location %></p>
+    <p><strong>Availability:</strong> <%= @listing.availability %></p>
+  </div>
 
-<p><%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: "Are you sure?"} %></p>
-<p><%= link_to "Edit", edit_listing_path %></p>
-
-<p><%= link_to "See all Listings", listings_path %></p>
-<p><%= link_to "Create a Listing", new_listing_path %></p>
+  <div class="d-flex justify-content-between" style="width: 30em; margin:0 auto;"
+    <ul class="list-inline">
+      <li class="list-inline-item btn btn-outline-primary btn-md"><%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: "Are you sure?"} %></li>
+      <li class="list-inline-item btn btn-outline-primary btn-md"><%= link_to "Edit", edit_listing_path %></li>
+      <li class="list-inline-item btn btn-outline-primary btn-md"><%= link_to "Listings", listings_path %></li>
+      <li class="list-inline-item btn btn-outline-primary btn-md"><%= link_to "New Listing", new_listing_path %></li>
+    </ul>
+  </div>
+</div>
