@@ -1,1 +1,3 @@
-<%= raise %>
+<% @bookings.each do |booking| %>
+  <p><%= booking.listing.name %></p>
+<% end %>
