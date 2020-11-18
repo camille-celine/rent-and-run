@@ -8,7 +8,6 @@
 
 require "faker"
 # TODO: Write a seed to insert 100 posts in the database
-User.destroy_all
 Listing.destroy_all
 
 4.times do 
@@ -30,6 +29,7 @@ User.all.each do |user|
       location: Faker::Nation.capital_city,
       price: rand(1..20),
       category: "Tennis",
+      availability: true,
       user_id: user.id
     )
   end
@@ -45,6 +45,7 @@ User.all.each do |user|
       location: Faker::Nation.capital_city,
       price: rand(1..20),
       category: "Basketball",
+      availability: false,
       user_id: user.id
     )
   end
