@@ -1,140 +1,62 @@
-<div class="container">
+<div class="container container-index">
   <h1 class="my-3">Sports equipment for rent</h1>
 </div>
 
-<div class="container">
+<div class="container container-index">
   <h2>Tennis</h2>
   <div class="cards-listings row">
-    <div class="card-listing col-12 col-lg-4">
-    <a href="http://www.example.com"></a>
+    <% @listings.each do |listing| %>
+      <% if listing.category == "Tennis"%>
+      <div class="card-listing col-12 col-lg-3">
       <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
-      <div class="card-listing-description">
-        <div class="card-title">
-          <h3>Ad name for equipment</h3>
-          <p>Tennis</p>
-        </div>
-        <div class="card-details">
-            <div>
-              <p>Available?</p>
-              <p>Location</p>
+      <%= link_to "See item", listing_path(listing) %>
+        <div class="card-listing-description">
+          <div class="card-title">
+            <h3><%= listing.name %></h3>
+            <p><%= listing.category %></p>
+          </div>
+          <div class="card-details">
+              <div>
+                <p><%= listing.availability %>Available ✔️</p>
+                <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+              </div>
+              <div class="card-price">
+                <p><%= listing.user.name %></p>
+                <p><%= listing.price %>€</p>
+              </div>
             </div>
-            <div class="card-price">
-              <p>Username</p>
-              <p>$$$</p>
-            </div>
-        </div>
+          </div>
       </div>
-    </div>
-    
-    <div class="card-listing col-12 col-lg-4">
-    <a href="http://www.example.com"></a>
-      <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
-      <div class="card-listing-description">
-        <div class="card-title">
-          <h3>Ad name for equipment too long for 1 line</h3>
-          <p>Tennis</p>
-        </div>
-        <div class="card-details">
-            <div>
-              <p>Available?</p>
-              <p>Location</p>
-            </div>
-            <div class="card-price">
-              <p>Username</p>
-              <p>$$$</p>
-            </div>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
 
-    <div class="card-listing col-12 col-lg-4">
-      <a href="http://www.example.com"></a>
-      <%= image_tag "tennis.jpg", class: "card-listing-img" %>
-      <div class="card-listing-description">
-        <div class="card-title">
-          <h3>Ad name for equipment </h3>
-          <p>Tennis</p>
-        </div>
-        <div class="card-details">
-            <div>
-              <p>Available?</p>
-              <p>Location</p>
-            </div>
-            <div class="card-price">
-              <p>Username</p>
-              <p>$$$</p>
-            </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-<div class="container">
+<div class="container container-index">
   <h2>Basketball</h2>
   <div class="cards-listings row">
-    <div class="card-listing col-12 col-lg-4">
-    <a href="http://www.example.com"></a>
+    <% @listings.each do |listing| %>
+      <% if listing.category == "Basketball"%>
+      <div class="card-listing col-12 col-lg-3">
       <%= image_tag "basketball.jpg", alt: "Find", class: "card-listing-img" %>
-      <div class="card-listing-description">
-        <div class="card-title">
-          <h3>Ad name for equipment</h3>
-          <p>Tennis</p>
-        </div>
-        <div class="card-details">
-            <div>
-              <p>Available?</p>
-              <p>Location</p>
+      <%= link_to "See item", listing_path(listing) %>
+        <div class="card-listing-description">
+          <div class="card-title">
+            <h3><%= listing.name %></h3>
+            <p><%= listing.category %></p>
+          </div>
+          <div class="card-details">
+              <div>
+                <p><%= listing.availability %>Available ✔️</p>
+                <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+              </div>
+              <div class="card-price">
+                <p><%= listing.user.name %></p>
+                <p><%= listing.price %>€</p>
+              </div>
             </div>
-            <div class="card-price">
-              <p>Username</p>
-              <p>$$$</p>
-            </div>
-        </div>
+          </div>
       </div>
-    </div>
-    
-    <div class="card-listing col-12 col-lg-4">
-    <a href="http://www.example.com"></a>
-      <%= image_tag "basketball.jpg", alt: "Find", class: "card-listing-img" %>
-      <div class="card-listing-description">
-        <div class="card-title">
-          <h3>Ad name for equipment too long for 1 line</h3>
-          <p>Tennis</p>
-        </div>
-        <div class="card-details">
-            <div>
-              <p>Available?</p>
-              <p>Location</p>
-            </div>
-            <div class="card-price">
-              <p>Username</p>
-              <p>$$$</p>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-listing col-12 col-lg-4">
-      <a href="http://www.example.com"></a>
-      <%= image_tag "basketball.jpg", class: "card-listing-img" %>
-      <div class="card-listing-description">
-        <div class="card-title">
-          <h3>Ad name for equipment </h3>
-          <p>Tennis</p>
-        </div>
-        <div class="card-details">
-            <div>
-              <p>Available?</p>
-              <p>Location</p>
-            </div>
-            <div class="card-price">
-              <p>Username</p>
-              <p>$$$</p>
-            </div>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
 
   </div>
 </div>
