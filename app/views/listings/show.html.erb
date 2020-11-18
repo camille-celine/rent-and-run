@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="card-show" style="width:50em; margin:0 auto;">
     <%= image_tag "tennis.jpg", alt: "Find", class: "card-show-img" %>
     <div class="card-show-details">
@@ -8,9 +7,8 @@
       <p><strong>Price::</strong> <%= @listing.price %>$</p>
       <p><strong>Location:</strong> <%= @listing.location %> <%= image_tag "pin.png", width: 15 %></p>
       <p><strong>Availability:</strong> <%= @listing.availability %> ✔️</p>
-      <%= link_to "Book this equipement", "#", class: "btn btn-flat" %>
+      <%= link_to "Book this equipement", new_booking_path, class: "btn btn-flat" %>
     </div>
     <%= link_to "Back to listing", listings_path, class: "button-show list-inline-item btn btn-outline-primary btn-md" %>
   </div>
-
 </div>
