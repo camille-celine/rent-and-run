@@ -7,57 +7,69 @@
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
       <% if listing.category == "Tennis"%>
-      <div class="card-listing col-12 col-lg-3">
-      <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
-      <%= link_to "See item", listing_path(listing) %>
-        <div class="card-listing-description">
-          <div class="card-title">
-            <h3><%= listing.name %></h3>
-            <p><%= listing.category %></p>
-          </div>
-          <div class="card-details">
-              <div>
-                <p><%= listing.availability %>Available ✔️</p>
-                <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
-              </div>
-              <div class="card-price">
-                <p><%= listing.user.name %></p>
-                <p><%= listing.price %>€</p>
-              </div>
+      <div class="col-12 col-lg-3">
+        <div class="card-listing">
+        <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
+        <%= link_to "See item", listing_path(listing) %>
+          <div class="card-listing-description">
+            <div class="card-title">
+              <h3><%= listing.name %></h3>
+              <p><%= listing.category %></p>
             </div>
+            <div class="card-details">
+                <div>
+                  <% if listing.availability == false %>
+                    <p>Available ❌</p>
+                  <% else %>
+                    <p>Available ✔️</p>
+                  <% end %>
+                  <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                </div>
+                <div class="card-price">
+                  <p><%= listing.user.name %></p>
+                  <p><%= listing.price %>€</p>
+                </div>
+            </div>
+          </div>
           </div>
       </div>
       <% end %>
     <% end %>
+  </div>
 
 <div class="container container-index">
   <h2>Basketball</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
       <% if listing.category == "Basketball"%>
-      <div class="card-listing col-12 col-lg-3">
-      <%= image_tag "basketball.jpg", alt: "Find", class: "card-listing-img" %>
-      <%= link_to "See item", listing_path(listing) %>
-        <div class="card-listing-description">
-          <div class="card-title">
-            <h3><%= listing.name %></h3>
-            <p><%= listing.category %></p>
-          </div>
-          <div class="card-details">
-              <div>
-                <p><%= listing.availability %>Available ✔️</p>
-                <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
-              </div>
-              <div class="card-price">
-                <p><%= listing.user.name %></p>
-                <p><%= listing.price %>€</p>
-              </div>
+      <div class="col-12 col-lg-3">
+        <div class="card-listing">
+        <%= image_tag "basketball.jpg", alt: "Find", class: "card-listing-img" %>
+        <%= link_to "See item", listing_path(listing) %>
+          <div class="card-listing-description">
+            <div class="card-title">
+              <h3><%= listing.name %></h3>
+              <p><%= listing.category %></p>
             </div>
+            <div class="card-details">
+                <div>
+                  <% if listing.availability == false %>
+                    <p>Available ❌</p>
+                  <% else %>
+                    <p>Available ✔️</p>
+                  <% end %>
+                  <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                </div>
+                <div class="card-price">
+                  <p><%= listing.user.name %></p>
+                  <p><%= listing.price %>€</p>
+                </div>
+            </div>
+          </div>
           </div>
       </div>
       <% end %>
     <% end %>
-
   </div>
 </div>
 </div>
