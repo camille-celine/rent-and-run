@@ -17,7 +17,11 @@
           </div>
           <div class="card-details">
               <div>
-                <p><%= listing.availability %>Available ✔️</p>
+                <% if listing.availability == false %>
+                  <p>Available ❌</p>
+                <% else %>
+                  <p>Available ✔️</p>
+                <% end %>
                 <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
               </div>
               <div class="card-price">
@@ -26,9 +30,10 @@
               </div>
             </div>
           </div>
-      </div>
+    </div>
       <% end %>
     <% end %>
+  </div>
 
 <div class="container container-index">
   <h2>Basketball</h2>
@@ -45,7 +50,11 @@
           </div>
           <div class="card-details">
               <div>
-                <p><%= listing.availability %>Available ✔️</p>
+                <% if listing.availability == false %>
+                  <p>Available ❌</p>
+                <% else %>
+                  <p>Available ✔️</p>
+                <% end %>
                 <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
               </div>
               <div class="card-price">
@@ -57,7 +66,6 @@
       </div>
       <% end %>
     <% end %>
-
   </div>
 </div>
 </div>
