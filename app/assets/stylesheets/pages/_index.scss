@@ -1,6 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
+
+@media (min-width: 1200px) {
+  .container-index { 
+      max-width: 1200px;
+  }
+}
+
 .cards-listings {
   display: flex;
   justify-content: space-between;
@@ -10,12 +18,14 @@
 
 .card-listing {
   height: 400px;
-  max-width: 300px;
+  max-width: 275px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
   padding: 0;
+  position: relative;
+  margin: 15px 0px;
 }
 
 .card-title {
@@ -53,5 +63,18 @@
 .card-price {
   position: absolute;
   right: 0;
+}
+
+.card-listing a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  z-index: 10; /* Places the link above everything else in the div */
+  background-color: #FFF; /* Fix to make div clickable in IE */
+  opacity: 0; /* Fix to make div clickable in IE */
+  filter: alpha(opacity=1); /* Fix to make div clickable in IE */
 }
 
