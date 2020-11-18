@@ -4,7 +4,7 @@
     <div class="card-show-details">
       <h2> <%= @listing.name %> </h2>
       <p><strong>Description:</strong> <%= @listing.description %></p>
-      <p><strong>Price::</strong> <%= @listing.price %>$</p>
+      <p><strong>Price:</strong> <%= @listing.price %>$</p>
       <p><strong>Location:</strong> <%= @listing.location %> <%= image_tag "pin.png", width: 15 %></p>
       <p><strong>Availability:</strong> <%= @listing.availability %> ✔️</p>
       <%= link_to "Book this equipement", new_booking_path, class: "btn btn-flat" %>
@@ -12,3 +12,4 @@
     <%= link_to "Back to listing", listings_path, class: "button-show list-inline-item btn btn-outline-primary btn-md" %>
   </div>
 </div>
+
