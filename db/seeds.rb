@@ -8,10 +8,12 @@
 
 require "faker"
 # TODO: Write a seed to insert 100 posts in the database
+User.destroy_all
+Listing.destroy_all
 
 4.times do 
  mark = User.create!(
-   name: Faker::FunnyName.name,
+   name: Faker::FunnyName.name[0..7],
    email: Faker::Internet.email,
    password: "123456",
    img_url: "010101"
