@@ -10,10 +10,12 @@ require "faker"
 # TODO: Write a seed to insert 100 posts in the database
 Listing.destroy_all
 
+locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
+
 4.times do
  mark = User.create!(
-   name: Faker::FunnyName.name[0..7],
-   email: Faker::Internet.email,
+   name: Faker::FunnyName.unique.name[0..7],
+   email: Faker::Internet.unique.email,
    password: "123456",
    img_url: "010101"
  )
@@ -25,11 +27,11 @@ User.all.each do |user|
   rand(1..3).times do
     listing = Listing.create!(
       name: Faker::Commerce.product_name,
-      description: Faker::Hipster.sentence,
-      location: Faker::Nation.capital_city,
+      description: Faker::Hipster.unique.sentence,
+      location: locations.sample,
       price: rand(1..20),
       category: "Tennis",
-      availability: true,
+      picture: "https://picsum.photos/300/200",
       user_id: user.id
     )
   end
@@ -41,14 +43,15 @@ User.all.each do |user|
   rand(1..3).times do
     listing_basket = Listing.create!(
       name: Faker::Commerce.product_name,
-      description: Faker::Hipster.sentence,
-      location: Faker::Nation.capital_city,
+      description: Faker::Hipster.unique.sentence,
+      location: locations.sample,
       price: rand(1..20),
       category: "Basketball",
-      availability: false,
+      picture: "https://picsum.photos/300/200",
       user_id: user.id
     )
   end
 end
+
 p "#{Listing.count} were created"
 

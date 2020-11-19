@@ -3,6 +3,20 @@
 </div>
 
 <div class="container container-index">
+  <div class="search">
+    <%= form_tag listings_path, method: :get, class:"search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search equipment"
+      %>
+      <%= submit_tag "Search", class: "button-search btn btn-primary" %>
+      <%= link_to "Clear", listings_path, class: "button-clear btn btn-ghost" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container container-index">
   <h2>Tennis</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
