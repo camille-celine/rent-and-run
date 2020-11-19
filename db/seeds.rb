@@ -8,8 +8,8 @@
 
 require "faker"
 # TODO: Write a seed to insert 100 posts in the database
-User.destroy_all
 Listing.destroy_all
+User.destroy_all
 
 locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
 
@@ -32,8 +32,8 @@ User.all.each do |user|
       location: locations.sample,
       price: rand(1..20),
       category: "Tennis",
-      picture: "https://picsum.photos/300/200"
-      user_id: user.id
+      picture: "https://picsum.photos/300/200",
+      user: user
     )
   end
 end
@@ -49,7 +49,7 @@ User.all.each do |user|
       price: rand(1..20),
       category: "Basketball",
       picture: "https://picsum.photos/300/200",
-      user_id: user.id
+      user: user
     )
   end
 end
