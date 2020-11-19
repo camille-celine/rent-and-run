@@ -78,3 +78,52 @@
   filter: alpha(opacity=1); /* Fix to make div clickable in IE */
 }
 
+ input {
+    border-radius: 25px;
+    opacity: 0.9;
+  }
+
+input:hover {
+  color: $gray;
+  opacity: 1;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+
+.search-bar {
+  display: flex;
+  width: 700px;
+  margin: 20px 0px;
+}
+
+.form-control {
+  border-radius: 5px;
+  height : 45px
+}
+
+.button-search {
+  margin: 0px 5px;
+  padding: 8px 24px;
+}
+
+.btn-ghost {
+  color: $blue;
+  border: 1px solid $blue;
+  padding: 8px 24px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  color: #5B9AD4;
+}
+
+h1 {
+  text-align: center;
+}
+

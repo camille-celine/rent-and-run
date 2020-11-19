@@ -3,7 +3,7 @@
     <h2 class="text-center">Create a Listing</h2>
       <%= simple_form_for @listing do |f| %>
         <%= f.input :name %>
-        <%# change to f.association :category %>
+        <%= f.input :category, collection: ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"] %>
         <%= f.input :category %>
         <%= f.input :description %>
         <%= f.input :price %>

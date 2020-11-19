@@ -3,7 +3,12 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @listings = policy_scope(Listing)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
+      @listings = Listing.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = policy_scope(Listing)
+    end
   end
 
   def show
