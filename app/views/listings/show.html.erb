@@ -1,13 +1,20 @@
-<h2> <%= @listing.name %> </h2>
-<!-- test -->
-<p><strong>Description:</strong> <%= @listing.description %></p>
-<p><strong>Price::</strong> <%= @listing.price %>$</p>
-<p><strong>Location::</strong> <%= @listing.location %></p>
-<p><strong>Availability::</strong> <%= @listing.availability %></p>
-<p><strong>Photo::</strong> <%= cl_image_tag @listing.photo.key %></p>
-
-<p><%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: "Are you sure?"} %></p>
-<p><%= link_to "Edit", edit_listing_path %></p>
-
-<p><%= link_to "See all Listings", listings_path %></p>
-<p><%= link_to "Create a Listing", new_listing_path %></p>
+<div class="container">
+  <div class="card-show" style="width:50em; margin:0 auto;">
+    <%= cl_image_tag @listing.photo.key, class: "card-show-img" %>
+    <div class="card-show-details">
+      <h2> <%= @listing.name %> </h2>
+      <p><strong>Description:</strong> <%= @listing.description %></p>
+      <p><strong>Price:</strong> <%= @listing.price %>$</p>
+      <p><strong>Location:</strong> <%= @listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+      <p><strong>Availability:</strong> <%= @listing.availability %> ✔️</p>
+      <%= link_to "Book this equipement", new_listing_booking_path(@listing), class: "btn btn-flat" %>
+      <% if policy(@listing).update? %>
+        <%= link_to 'Edit this listing', edit_listing_path(@listing), class: "btn btn-flat" %>
+      <% end %>
+      <% if policy(@listing).destroy? %>
+        <%= link_to 'Delete this listing', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat" %>
+      <% end %>
+    </div>
+    <%= link_to "Back to listing", listings_path, class: "button-show list-inline-item btn btn-outline-primary btn-md" %>
+  </div>
+</div>

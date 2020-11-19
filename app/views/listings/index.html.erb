@@ -1,10 +1,89 @@
-<h2>All listings</h2>
+<div class="container container-index">
+  <h1 class="my-3">Sports equipment for rent</h1>
+</div>
 
+<div class="container container-index">
+  <div class="search">
+    <%= form_tag listings_path, method: :get, class:"search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search equipment"
+      %>
+      <%= submit_tag "Search", class: "button-search btn btn-primary" %>
+      <%= link_to "Clear", listings_path, class: "button-clear btn btn-ghost" %>
+    <% end %>
+  </div>
+</div>
 
-<ul>
-<% @listings.each do |listing| %>
-<li><%= link_to listing.name, listing_path(listing) %></li>
-<% end %>
-</ul>
+<div class="container container-index">
+  <h2>Tennis</h2>
+  <div class="cards-listings row">
+    <% @listings.each do |listing| %>
+      <div class="col-12 col-lg-3">
+        <div class="card-listing">
+        <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
+        <% if policy(listing).show? %>
+          <%= link_to "See item", listing_path(listing) %>
+        <% end %>
+          <div class="card-listing-description">
+            <div class="card-title">
+              <h3><%= listing.name %></h3>
+              <p><%= listing.category %></p>
+            </div>
+            <div class="card-details">
+                <div>
+                  <% if listing.availability == false %>
+                    <p>Available ❌</p>
+                  <% else %>
+                    <p>Available ✔️</p>
+                  <% end %>
+                  <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                </div>
+                <div class="card-price">
+                  <p><%= listing.user.name %></p>
+                  <p><%= listing.price %>€</p>
+                </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
 
-<p><%= link_to "Create a Listing", new_listing_path %></p>
+<div class="container container-index">
+  <h2>Basketball</h2>
+  <div class="cards-listings row">
+    <% @listings.each do |listing| %>
+      <% if listing.category == "Basketball"%>
+      <div class="col-12 col-lg-3">
+        <div class="card-listing">
+        <%= image_tag "basketball.jpg", alt: "Find", class: "card-listing-img" %>
+        <%= link_to "See item", listing_path(listing) %>
+          <div class="card-listing-description">
+            <div class="card-title">
+              <h3><%= listing.name %></h3>
+              <p><%= listing.category %></p>
+            </div>
+            <div class="card-details">
+                <div>
+                  <% if listing.availability == false %>
+                    <p>Available ❌</p>
+                  <% else %>
+                    <p>Available ✔️</p>
+                  <% end %>
+                  <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                </div>
+                <div class="card-price">
+                  <p><%= listing.user.name %></p>
+                  <p><%= listing.price %>€</p>
+                </div>
+            </div>
+          </div>
+          </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
