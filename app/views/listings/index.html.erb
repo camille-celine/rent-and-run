@@ -1,7 +1,9 @@
 <div class="container container-index">
   <h1 class="my-3">Sports equipment for rent</h1>
 </div>
-
+<% @listings.each do |listing| %>
+  <p><%= listing.name %></p>
+<% end %>
 <div class="container container-index">
   <h2>Tennis</h2>
   <div class="cards-listings row">
