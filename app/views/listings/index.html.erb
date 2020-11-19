@@ -3,14 +3,29 @@
 </div>
 
 <div class="container container-index">
+  <div class="search">
+    <%= form_tag listings_path, method: :get, class:"search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search equipment"
+      %>
+      <%= submit_tag "Search", class: "button-search btn btn-primary" %>
+      <%= link_to "Clear", listings_path, class: "button-clear btn btn-ghost" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container container-index">
   <h2>Tennis</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
-      <% if listing.category == "Tennis"%>
       <div class="col-12 col-lg-3">
         <div class="card-listing">
         <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
-        <%= link_to "See item", listing_path(listing) %>
+        <% if policy(listing).show? %>
+          <%= link_to "See item", listing_path(listing) %>
+        <% end %>
           <div class="card-listing-description">
             <div class="card-title">
               <h3><%= listing.name %></h3>
@@ -33,7 +48,6 @@
           </div>
           </div>
       </div>
-      <% end %>
     <% end %>
   </div>
 

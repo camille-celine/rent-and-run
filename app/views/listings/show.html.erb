@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-show" style="width:50em; margin:0 auto;">
-    <%= image_tag "tennis.jpg", alt: "Find", class: "card-show-img" %>
+    <%= cl_image_tag @listing.photo.key, class: "card-show-img" %>
     <div class="card-show-details">
       <h2> <%= @listing.name %> </h2>
       <p><strong>Description:</strong> <%= @listing.description %></p>
@@ -8,8 +8,13 @@
       <p><strong>Location:</strong> <%= @listing.location %> <%= image_tag "pin.png", width: 15 %></p>
       <p><strong>Availability:</strong> <%= @listing.availability %> ✔️</p>
       <%= link_to "Book this equipement", new_listing_booking_path(@listing), class: "btn btn-flat" %>
+      <% if policy(@listing).update? %>
+        <%= link_to 'Edit this listing', edit_listing_path(@listing), class: "btn btn-flat" %>
+      <% end %>
+      <% if policy(@listing).destroy? %>
+        <%= link_to 'Delete this listing', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat" %>
+      <% end %>
     </div>
     <%= link_to "Back to listing", listings_path, class: "button-show list-inline-item btn btn-outline-primary btn-md" %>
   </div>
 </div>
-
