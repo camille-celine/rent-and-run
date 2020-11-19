@@ -12,6 +12,7 @@ Listing.destroy_all
 User.destroy_all
 
 locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
+sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"]
 
 4.times do
  mark = User.create!(
@@ -31,28 +32,10 @@ User.all.each do |user|
       description: Faker::Hipster.unique.sentence,
       location: locations.sample,
       price: rand(1..20),
-      category: "Tennis",
+      category: sports.sample,
       picture: "https://picsum.photos/300/200",
       user: user
     )
   end
 end
 p "#{Listing.count} were created"
-
-p "generating listing.."
-User.all.each do |user|
-  rand(1..3).times do
-    listing_basket = Listing.create!(
-      name: Faker::Commerce.product_name,
-      description: Faker::Hipster.unique.sentence,
-      location: locations.sample,
-      price: rand(1..20),
-      category: "Basketball",
-      picture: "https://picsum.photos/300/200",
-      user: user
-    )
-  end
-end
-
-p "#{Listing.count} were created"
-
