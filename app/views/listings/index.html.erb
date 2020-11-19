@@ -20,7 +20,6 @@
   <h2>Tennis</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
-      <% if listing.category == "Tennis"%>
       <div class="col-12 col-lg-3">
         <div class="card-listing">
         <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
@@ -49,7 +48,6 @@
           </div>
           </div>
       </div>
-      <% end %>
     <% end %>
   </div>
 
