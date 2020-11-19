@@ -1,6 +1,20 @@
 <div class="container container-index">
   <h1 class="my-3">Sports equipment for rent</h1>
 </div>
+<div class="container container-index">
+  <div class="search">
+    <%= form_tag listings_path, method: :get, class:"search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search equipment"
+      %>
+      <%= submit_tag "Search", class: "button-search btn btn-primary" %>
+      <%= link_to "Clear", listings_path, class: "button-clear btn btn-ghost" %>
+    <% end %>
+  </div>
+</div>
+
 
 <div class="container container-index">
   <h2>Tennis</h2>

@@ -1,7 +1,12 @@
 class ListingsController < ApplicationController
 
-    def index
-    @listings = Listing.all
+  def index
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
+      @listings = Listing.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
