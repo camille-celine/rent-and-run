@@ -13,8 +13,8 @@ Listing.destroy_all
 
 4.times do
  mark = User.create!(
-   name: Faker::FunnyName.name[0..7],
-   email: Faker::Internet.email,
+   name: Faker::FunnyName.unique.name[0..7],
+   email: Faker::Internet.unique.email,
    password: "123456",
    img_url: "010101"
  )
@@ -26,10 +26,11 @@ User.all.each do |user|
   rand(1..3).times do
     listing = Listing.create!(
       name: Faker::Commerce.product_name,
-      description: Faker::Hipster.sentence,
-      location: Faker::Nation.capital_city,
+      description: Faker::Hipster.unique.sentence,
+      location: Faker::Address.street_address,
       price: rand(1..20),
       category: "Tennis",
+      picture: "https://picsum.photos/300/200"
       user_id: user.id
     )
   end
@@ -41,13 +42,15 @@ User.all.each do |user|
   rand(1..3).times do
     listing_basket = Listing.create!(
       name: Faker::Commerce.product_name,
-      description: Faker::Hipster.sentence,
-      location: Faker::Nation.capital_city,
+      description: Faker::Hipster.unique.sentence,
+      location: Faker::Address.street_address,
       price: rand(1..20),
       category: "Basketball",
+      picture: "https://picsum.photos/300/200",
       user_id: user.id
     )
   end
 end
+
 p "#{Listing.count} were created"
 
