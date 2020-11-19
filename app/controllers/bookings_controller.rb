@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @user = current_user
   end
 
-   def new
+  def new
     @booking = Booking.new
     @listing = Listing.find(params[:listing_id])
   end
