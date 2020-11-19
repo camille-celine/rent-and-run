@@ -9,7 +9,7 @@ locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museu
 sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"]
 
 
-4.times do
+5.times do
  mark = User.create!(
    name: Faker::FunnyName.unique.name[0..7],
    email: Faker::Internet.unique.email,
@@ -21,7 +21,7 @@ end
 
 p "generating listing.."
 User.all.each do |user|
-  rand(1..3).times do
+  rand(1..5).times do
     listing = Listing.create!(
       name: Faker::Commerce.product_name,
       description: Faker::Hipster.unique.sentence,
