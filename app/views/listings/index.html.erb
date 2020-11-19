@@ -3,40 +3,6 @@
 </div>
 
 <div class="container container-index">
-  <h2>Recent listing</h2>
-  <div class="cards-listings row">
-    <% new = Listing.last %>
-      <div class="col-12 col-lg-3">
-        <div class="card-listing">
-        <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
-        <% if policy(new).show? %>
-          <%= link_to "See item", listing_path(new) %>
-        <% end %>
-          <div class="card-listing-description">
-            <div class="card-title">
-              <h3><%= new.name %></h3>
-              <p><%= new.category %></p>
-            </div>
-            <div class="card-details">
-                <div>
-                  <% if new.availability == false %>
-                    <p>Available ❌</p>
-                  <% else %>
-                    <p>Available ✔️</p>
-                  <% end %>
-                  <p><%= new.location %> <%= image_tag "pin.png", width: 15 %></p>
-                </div>
-                <div class="card-price">
-                  <p><%= new.user.name %></p>
-                  <p><%= new.price %>€</p>
-                </div>
-            </div>
-          </div>
-          </div>
-      </div>
-  </div>
-
-<div class="container container-index">
   <h2>Tennis</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
