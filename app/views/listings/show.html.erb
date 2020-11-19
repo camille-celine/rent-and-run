@@ -4,7 +4,7 @@
 <p><strong>Price::</strong> <%= @listing.price %>$</p>
 <p><strong>Location::</strong> <%= @listing.location %></p>
 <p><strong>Availability::</strong> <%= @listing.availability %></p>
-
+<p><strong>Photo::</strong> <%= cl_image_tag @listing.photo.key %></p>
 
 <p><%= link_to "Delete", listing_path(@listing), method: :delete, data: {confirm: "Are you sure?"} %></p>
 <p><%= link_to "Edit", edit_listing_path %></p>
