@@ -11,6 +11,8 @@ require "faker"
 User.destroy_all
 Listing.destroy_all
 
+locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
+
 4.times do
  mark = User.create!(
    name: Faker::FunnyName.unique.name[0..7],
@@ -27,7 +29,7 @@ User.all.each do |user|
     listing = Listing.create!(
       name: Faker::Commerce.product_name,
       description: Faker::Hipster.unique.sentence,
-      location: Faker::Address.street_address,
+      location: locations.sample,
       price: rand(1..20),
       category: "Tennis",
       picture: "https://picsum.photos/300/200"
@@ -43,7 +45,7 @@ User.all.each do |user|
     listing_basket = Listing.create!(
       name: Faker::Commerce.product_name,
       description: Faker::Hipster.unique.sentence,
-      location: Faker::Address.street_address,
+      location: locations.sample,
       price: rand(1..20),
       category: "Basketball",
       picture: "https://picsum.photos/300/200",
