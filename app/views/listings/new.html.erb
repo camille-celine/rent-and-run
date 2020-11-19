@@ -1,19 +1,18 @@
 <div class="row justify-content-center" id="new-form">
-  <div class="form-box">
-    <div class=" col-12 col-md-6 col-lg-4" id="form-container">
+   <div class="card-product">
+     <%= image_tag "equipment.jpg", alt: "Find", class: "image-form"%>
+    <div class="card-product-infos">
       <h2 class="text-center">Create a Listing</h2>
         <%= simple_form_for @listing do |f| %>
           <%= f.input :name %>
-          <%# change to f.association :category %>
-          <%= f.input :category %>
+          <%= f.input :category, collection: ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"] %>
           <%= f.input :description %>
           <%= f.input :price %>
           <%= f.input :location %>
           <%= f.input :availability %>
-          <%= f.input :image, as: :file, label: "Image of your item:" %>
+          <%= f.input :photo, as: :file, label: "Image of item:" %>
           <%= f.button :submit, class: "btn btn-primary" %>
-        <% end %>
+      <% end %>
     </div>
-      <%= image_tag "equipment.jpg", alt: "Find", class: "image-form"%>
   </div>
 </div>
