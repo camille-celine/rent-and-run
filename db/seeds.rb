@@ -30,9 +30,8 @@ User.all.each do |user|
       category: sports.sample,
       availability: [true, false].sample,
       picture: "https://picsum.photos/300/200",
-      user: user
+      user_id: user.id
     )
   end
 end
-
 p "#{Listing.count} were created"

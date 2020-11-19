@@ -1,14 +1,16 @@
-<div class="container">
-  <h2>Create a Listing</h2>
-  <%= simple_form_for @listing do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :location %>
-    <%= f.input :availability %>
-    <%= f.input :image, as: :file, label: "Image of your item:" %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+<div class="row justify-content-center" id="new-form">
+  <div class=" col-12 col-md-6 col-lg-4" id="form-container">
+    <h2 class="text-center">Create a Listing</h2>
+      <%= simple_form_for @listing do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category, collection: ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"] %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :location %>
+        <%= f.input :availability %>
+        <%= f.input :image, as: :file, label: "Image of your item:" %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+  </div>
 </div>
-

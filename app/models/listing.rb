@@ -5,3 +5,4 @@ class Listing < ApplicationRecord
   validates :name, :description, :location, :price, :picture, :presence => true
   validates :availability, inclusion: { in: [true, false] }
 end
+
