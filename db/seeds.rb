@@ -33,6 +33,7 @@ User.all.each do |user|
       location: locations.sample,
       price: rand(1..20),
       category: sports.sample,
+      availability: [true, false].sample,
       picture: "https://picsum.photos/300/200",
       user: user
     )
