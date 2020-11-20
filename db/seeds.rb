@@ -8,7 +8,7 @@ p "clean"
 
 locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
 sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"]
-adjectives = ["Cool ", "Great ", "Okayish", "Aerodynamic", "New ", "Old ", "Usable ", "Used ", "Barely used ", "Slightly used ", "Functioning ", "Vintage ", "Original ", "Pro ", "White ", "Black ", "Light ", "Heavy ", "Incredible ", "Mind Blowing "]
+adjectives = ["Cool ", "Great ", "Okayish ", "Aerodynamic", "New ", "Old ", "Usable ", "Used ", "Barely used ", "Slightly used ", "Functioning ", "Vintage ", "Original ", "Pro ", "White ", "Black ", "Light ", "Heavy ", "Incredible ", "Mind Blowing "]
 items = ["Gloves", "Shoes", "Balls", "Socks", "Pants", "Shirt", "Shorts", "Racquet", "Jersey", "Clubs", "Shin Guards", "Hat", "Helmet"]
 
 10.times do
