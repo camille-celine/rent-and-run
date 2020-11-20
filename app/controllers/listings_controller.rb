@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
-      @listings = Listing.where(sql_query, query: "%#{params[:query]}%")
+      @listings = policy_scope(Listing).where(sql_query, query: "%#{params[:query]}%")
     else
       @listings = policy_scope(Listing)
     end
