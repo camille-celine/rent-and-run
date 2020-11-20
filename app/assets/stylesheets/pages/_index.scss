@@ -17,7 +17,7 @@
 }
 
 .card-listing {
-  height: 400px;
+  height: 380px;
   max-width: 275px;
   background-color: white;
   border-radius: 5px;
@@ -66,6 +66,7 @@
 .card-price {
   position: absolute;
   right: 0;
+  text-align: right;
 }
 
 .card-listing a {

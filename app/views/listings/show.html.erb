@@ -6,7 +6,11 @@
       <p><strong>Description:</strong> <%= @listing.description %></p>
       <p><strong>Price:</strong> <%= @listing.price %>$</p>
       <p><strong>Location:</strong> <%= @listing.location %> <%= image_tag "pin.png", width: 15 %></p>
-      <p><strong>Availability:</strong> <%= @listing.availability %> ✔️</p>
+      <% if @listing.availability == false %>
+        <p><strong>Availability: </strong>❌</p>
+      <% else %>
+        <p><strong>Availability: </strong>✔️</p>
+      <% end %>
       <%= link_to "Book this equipement", new_listing_booking_path(@listing), class: "btn btn-flat" %>
       <% if policy(@listing).update? %>
         <%= link_to 'Edit this listing', edit_listing_path(@listing), class: "btn btn-flat" %>
