@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   belongs_to :user
-  has_one :bookings
+  has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
   validates :name, :description, :location, :price, :presence => true

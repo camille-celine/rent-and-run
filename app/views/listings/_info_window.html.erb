@@ -1,5 +1,5 @@
 <div class="card-map">
-  <%= image_tag "tennis.jpg", alt: "Find", class: "card-map-img" %>
+  <%= cl_image_tag listing.photo.key, alt: "Find", class: "card-map-img" %>
   <% if policy(listing).show? %>
     <%= link_to "See item", listing_path(listing) %>
   <% end %>

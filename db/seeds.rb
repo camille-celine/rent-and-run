@@ -6,8 +6,9 @@ Listing.destroy_all
 User.destroy_all
 p "clean"
 
-locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
-sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"]
+locations = ["Brandeburger Tor Berlin", "Checkpoint Charlie Berlin", "Reichstag Berlin", "Neues Museum Berlin", "Berliner Philharmonie", "Potsdamer Platz Berlin", "Alexanderplatz Berlin", "Tiergarten Berlin", "Bellevue Berlin", "Hermannplatz Berlin", "Kotbusser Tor Berlin", "Berlin Hauptbahnhof", "Volkspark Friedrichshain Berlin", "Boxhagener Platz Berlin", "Zionskirchplatz Berlin", "Hasenheide Berlin", "Volkspark am Weinberg Berlin", "Mauerpark Berlin", "Oderbergerstrasse Berlin", "Schillerkiez Berlin", "Strausberger Platz Berlin", "Kaufhaus des Westens Berlin"]
+# sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"]
+sports = ["Tennis", "Basketball"]
 adjectives = ["Cool ", "Great ", "Okayish ", "Aerodynamic ", "New ", "Old ", "Usable ", "Used ", "Barely used ", "Slightly used ", "Functioning ", "Vintage ", "Original ", "Pro ", "White ", "Black ", "Light ", "Heavy ", "Incredible ", "Mind Blowing "]
 items = ["Gloves", "Shoes", "Balls", "Socks", "Pants", "Shirt", "Shorts", "Racquet", "Jersey", "Clubs", "Shin Guards", "Hat", "Helmet"]
 
