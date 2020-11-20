@@ -7,12 +7,12 @@
         <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
           <div class="card-listing-description">
             <div class="card-title">
-              <h3><%= booking.listing.name %></h3>
+              <h3><%= booking.listing.name.truncate(16) %></h3>
               <p><%= booking.listing.category %></p>
             </div>
             <div class="card-details">
                 <div>
-                  <p><%= booking.listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                  <p><%= booking.listing.location.truncate(16) %> <%= image_tag "pin.png", width: 15 %></p>
                 </div>
                 <div class="card-price">
                   <p><%= booking.listing.user.name %></p>
