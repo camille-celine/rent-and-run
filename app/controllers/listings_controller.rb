@@ -9,6 +9,13 @@ class ListingsController < ApplicationController
     else
       @listings = policy_scope(Listing)
     end
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { listing: listing })
+      }
+    end
   end
 
   def show

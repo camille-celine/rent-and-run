@@ -1,0 +1,25 @@
+<div class="card-map">
+  <%= image_tag "tennis.jpg", alt: "Find", class: "card-map-img" %>
+  <% if policy(listing).show? %>
+    <%= link_to "See item", listing_path(listing) %>
+  <% end %>
+    <div class="card-listing-description">
+      <div class="card-title">
+        <h3><%= listing.name.truncate(16) %></h3>
+        <p><%= listing.category %></p>
+      </div>
+      <div class="card-details">
+          <div>
+            <% if listing.availability == false %>
+              <p>Available ❌</p>
+            <% else %>
+              <p>Available ✔️</p>
+            <% end %>
+            <p><%= listing.location.truncate(16) %> <%= image_tag "pin.png", width: 15 %></p>
+          </div>
+          <div class="card-map-price">
+            <p><%= listing.user.name %></p>
+            <p><%= listing.price %>€</p>
+          </div>
+      </div>
+    </div>

@@ -17,7 +17,19 @@
 </div>
 
 <div class="container container-index">
-  <h2>Tennis</h2>
+  <div class="category-header">
+    <h2>Tennis</h2>
+    <a class="btn btn-ghost" data-toggle="collapse" href="#collapseMap" role="button" aria-expanded="false" aria-controls="collapseMap">
+      Show map view <i class="fas fa-map-marked-alt"></i>
+    </a>
+  </div>
+<div class="collapse" id="collapseMap">
+  <div id="map"
+      style="width: 100%; height: 450px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
       <div class="col-12 col-lg-3">
@@ -52,7 +64,7 @@
   </div>
 
 <div class="container container-index">
-  <h2>Basketball</h2>
+    <h2>Basketball</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
       <% if listing.category == "Basketball"%>
