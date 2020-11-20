@@ -1,4 +1,5 @@
 require "faker"
+require "open-uri"
 
 Booking.destroy_all
 Listing.destroy_all
@@ -7,7 +8,7 @@ p "clean"
 
 locations = ["Brandeburger Tor", "Checkpoint Charlie", "Reichstag", "Neues Museum", "Berliner Philharmonie", "Potsdamer Platz", "Alexanderplatz", "Tiergarten", "Bellevue", "Hermannplatz", "Kotbusser Tor", "Berlin Hauptbahnhof", "Volkspark Friedrichshain", "Boxhagener Platz", "Zionskirchplatz", "Hasenheide", "Volkspark am Weinberg", "Mauerpark", "Oderbergerstrasse", "Schillerkiez", "Strausberger Platz", "Kaufhaus des Westens"]
 sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "Baseball", "Combat sports", "Golf", "Volleyball", "Other"]
-
+adjectives = ["Cool ", "Great ", "New ", "Old ", "Usable ", "Used ", "Barely used ", "Functioning ", "Vintage ", "Original ", "Pro ", "White ", "Black ", "Light ", "Heavy "]
 
 5.times do
  mark = User.create!(
@@ -19,6 +20,7 @@ sports = ["Football", "Basketball", "Tennis", "Baseball", "American football", "
  p mark
 end
 
+
 p "generating listing.."
 User.all.each do |user|
   rand(1..5).times do
@@ -28,10 +30,13 @@ User.all.each do |user|
       location: locations.sample,
       price: rand(1..20),
       category: sports.sample,
+      picture: '1',
       availability: [true, false].sample,
-      picture: "https://picsum.photos/300/200",
       user_id: user.id
     )
+    picture = URI.open("https://picsum.photos/300/200")
+    listing.photo.attach(io: picture, filename: "#{listing.name}.jpg", content_type: "image/jpg")
+    listing.save
   end
 end
 p "#{Listing.count} were created"
