@@ -9,6 +9,13 @@ class ListingsController < ApplicationController
     else
       @listings = policy_scope(Listing)
     end
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { listing: listing })
+      }
+    end
   end
 
   def show
@@ -49,7 +56,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :description, :picture, :availability, :location, :price, :photo)
+    params.require(:listing).permit(:name, :description, :picture, :availability, :location, :price, :photo, :category)
   end
 
   def set_listing
