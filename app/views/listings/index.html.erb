@@ -2,20 +2,30 @@
   <h1 class="my-3">Sports equipment for rent</h1>
 </div>
 
+<div class="container container-index">
+  <div class="search">
+    <%= form_tag listings_path, method: :get, class:"search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search equipment"
+      %>
+      <%= submit_tag "Search", class: "button-search btn btn-primary" %>
+      <%= link_to "Clear", listings_path, class: "button-clear btn btn-ghost" %>
+    <% end %>
+  </div>
+</div>
+
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<% @listings.each do |listing| %>
-  <p><%= listing.name %></p>
-<% end %>
 <div class="container container-index">
   <h2>Tennis</h2>
   <div class="cards-listings row">
     <% @listings.each do |listing| %>
-      <% if listing.category == "Tennis"%>
       <div class="col-12 col-lg-3">
         <div class="card-listing">
         <%= image_tag "tennis.jpg", alt: "Find", class: "card-listing-img" %>
@@ -24,7 +34,7 @@
         <% end %>
           <div class="card-listing-description">
             <div class="card-title">
-              <h3><%= listing.name %></h3>
+              <h3><%= listing.name.truncate(16) %></h3>
               <p><%= listing.category %></p>
             </div>
             <div class="card-details">
@@ -34,7 +44,7 @@
                   <% else %>
                     <p>Available ✔️</p>
                   <% end %>
-                  <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                  <p><%= listing.location.truncate(16) %> <%= image_tag "pin.png", width: 15 %></p>
                 </div>
                 <div class="card-price">
                   <p><%= listing.user.name %></p>
@@ -44,7 +54,6 @@
           </div>
           </div>
       </div>
-      <% end %>
     <% end %>
   </div>
 
@@ -59,7 +68,7 @@
         <%= link_to "See item", listing_path(listing) %>
           <div class="card-listing-description">
             <div class="card-title">
-              <h3><%= listing.name %></h3>
+              <h3><%= listing.name.truncate(16) %></h3>
               <p><%= listing.category %></p>
             </div>
             <div class="card-details">
@@ -69,7 +78,7 @@
                   <% else %>
                     <p>Available ✔️</p>
                   <% end %>
-                  <p><%= listing.location %> <%= image_tag "pin.png", width: 15 %></p>
+                  <p><%= listing.location.truncate(16) %> <%= image_tag "pin.png", width: 15 %></p>
                 </div>
                 <div class="card-price">
                   <p><%= listing.user.name %></p>

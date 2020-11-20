@@ -3,7 +3,12 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @listings = policy_scope(Listing)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query OR category ILIKE :query"
+      @listings = policy_scope(Listing).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = policy_scope(Listing)
+    end
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
@@ -50,7 +55,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :description, :picture, :availability, :location, :price)
+    params.require(:listing).permit(:name, :description, :picture, :availability, :location, :price, :photo)
   end
 
   def set_listing
