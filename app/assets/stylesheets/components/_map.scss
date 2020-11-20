@@ -1,0 +1,45 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-map {
+  height: 260px;
+  max-width: 275px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 0;
+  position: relative;
+  margin: 8px 0px 8px 0px;
+}
+
+.card-map-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-map-price {
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+.card-map a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  z-index: 10; /* Places the link above everything else in the div */
+  background-color: #FFF; /* Fix to make div clickable in IE */
+  opacity: 0; /* Fix to make div clickable in IE */
+  filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}

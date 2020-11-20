@@ -15,11 +15,15 @@
     <% end %>
   </div>
 </div>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseMap" role="button" aria-expanded="false" aria-controls="collapseMap">
+    Show the map view
+  </a>
+<div class="collapse" id="collapseMap">
+  <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
 <div class="container container-index">
